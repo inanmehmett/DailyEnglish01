@@ -1,0 +1,21 @@
+﻿@model IEnumerable<DailyEnglish.Models.ProductsModel>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<div class="container d-flex flex-wrap">
+    @foreach(var item in Model){
+        var s = item.Name;
+        var firsWord = s.IndexOf(" ") > -1 ? s.Substring(0, s.IndexOf(" ")) : s;
+        <div class="card" style="width: 18rem;">
+            <img src="https://loremflickr.com/g/320/240/@firsWord?lock=@item.Id
+" class="card-img-top" alt="...">
+        <div class="card-body">
+            <h5 class="card-title">@item.Name</h5>
+                <p class="card-text">@Html.DisplayFor(m=>@item.Price)</p>
+            <p class="card-text">@item.Description</p>
+            <a href="#" class="btn btn-primary">Go somewhere</a>
+        </div>
+    </div>
+    }
+</div>
