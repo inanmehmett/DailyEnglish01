@@ -10,7 +10,7 @@ namespace DailyEnglish01.Services
         {
             throw new NotImplementedException();
         }
-        public List<QuoteModel> GetAllQuotes() 
+        public List<QuoteModel> GetAllQuotes()
         {
             List<QuoteModel> quotesList = new List<QuoteModel>();
             string sqlStatement = "SELECT * FROM dbo.quote";
