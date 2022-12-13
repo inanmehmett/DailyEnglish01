@@ -18,7 +18,7 @@ namespace DailyEnglish01.Controllers
         //    //Quotes.Add(new Quote { Id = 3, Author = "ali", DescriptionEn = "school", DescriptionTr = "okul" });
         //    //return View(Quotes);
         //}
-        public ActionResult Index()
+        public ActionResult Index() 
         {
             QuotesDAO quotes = new QuotesDAO();
             return View(quotes.GetAllQuotes());
