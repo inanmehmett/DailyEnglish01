@@ -1,0 +1,26 @@
+﻿@model IEnumerable<DailyEnglish01.QuoteModel>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<h2>Daily English Quotes List</h2>
+<div class="container d-flex flex-wrap">
+    @foreach (var item in Model)
+    {
+        <div class="card col-6 text-justify">
+            <div class="card-header">
+                <p class="card-text">@item.Id</p>
+            </div>
+            <div class="card-body">
+                <h5 class="card-text">"@item.DescriptionEn"</h5>
+                <p class="card-text">"@item.DescriptionTr"</p>
+                <h6 class="card-title">-@item.Author</h6>
+                <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+        </div>
+    }
+</div>
+@*@Html.PagedListPager((IPagedList)Model,p=>Url.Action("Index", new {p}), new PagedListRenderOptions{
+    LiElementClasses = new List<string>
+    {"page-link"}
+})*@
